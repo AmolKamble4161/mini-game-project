@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rock Paper Scissors</h1>
+        <div class="choices">
+            <div class="choice" id="rock">
+                <img src="./Images/Rock-image.jpg" alt="Rock Image">
+                <p class="choiceName">Rock</p>
+            </div>
+            <div class="choice" id="paper">
+                <img src="./Images/Paper-image.jpg" alt="Rock Image">
+                <p class="choiceName">Paper</p>
+            </div>
+            <div class="choice" id="scissors">
+                <img src="./Images/Scissor-image.jpg" alt="Rock Image">
+                <p class="choiceName">Scissors</p>
+            </div>
+        </div>
+
+        <!-- score board -->
+        <div class="scoreBoard">
+            <p id="userLable"><span>🙋Your choice</span></p>
+            <div class="score userSprink">
+                <p id="userScore">0</p>
+                <p class="opponent">You</p>
+            </div>
+            <div class="vs">vs</div>
+            <div class="score compSprink">
+                <p id="compScore">0</p>
+                <p class="opponent">Comp</p>
+            </div>
+            <p id="compLable"><span>Comp choice🖥️</span></p>
+        </div>
+
+        <!-- Massage Container -->
+        <div class="msgContainer">
+            <p id="msg">Play Your Move!</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

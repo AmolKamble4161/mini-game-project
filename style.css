@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #009FB7, #696773);
+    background-attachment: fixed;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 3rem;
+}
+
+.choice {
+    height: 200px;
+    width: 200px;
+    border-radius: 10%;
+    border: 3px solid transparent;
+    transition: 0.1s linear;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.choice:hover {
+    border: 3px solid #272727;
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 30px 0px black;
+}
+
+.choice:active {
+  transform: scale(0.95) translateY(-5px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2) inset;
+}
+
+.choice img {
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.choiceName {
+    font-size: 1.2rem;
+    font-weight: 600;
+    position: absolute;
+    bottom: 0;
+    transition: 0.3s ease;
+    z-index: -1;
+}
+.choice:hover .choiceName {
+    bottom: -2rem;
+}
+
+/* score board */
+.scoreBoard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+    font-size: 1.5rem;
+    gap: 3rem;
+    position: relative;
+}
+
+#userScore, #compScore {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #F9DC5C;
+}
+
+.score {
+    position: relative;
+}
+
+.opponent {
+    background-color: #011936;
+    padding: 0.5rem 1rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #F9DC5C;
+}
+
+#userLable,
+#compLable {
+    font-size: 1rem;
+    position: relative;
+    width: 130px;
+    top: 25px;
+    overflow: hidden;
+    color: #F9DC5C;
+    height: 1.5rem;
+    border-bottom: 1px solid white;
+}
+#userLable{
+    left: 25px;
+    text-align: end;
+
+ }
+#compLable {
+    left: -25px;
+    text-align: start;
+}
+
+.scoreBoard span {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transition: 0.3s ease;
+}
+
+.vs {color: #C2EABD;}
+
+/* massage container */
+.msgContainer #msg {
+    border: 1px solid;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    color: #F9DC5C;
+    border: 2px solid #F9DC5C;
+    border-radius: 1rem 0 1rem;
+    background-color: #465362;
+    width: 400px;
+    position: relative;
+}
+
+.msgContainer #msg::before {
+    content: '\201C';
+    position: absolute;
+    top: -23px;
+    left: 10px;
+    font-size: 5rem;
+}
+.msgContainer #msg::after {
+    content: '\201D';
+    position: absolute;
+    bottom: -65px;
+    right: 10px;
+    font-size: 5rem;
+}
+
+/* Particle style */
+.particle {
+  position: absolute;
+  font-size: 40px;
+  animation: floatUp 3s ease-out forwards;
+  pointer-events: none;
+}
+/* animation */
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) scale(0);
+  }
+}
+
+
+/* ======= Media query ======= */
+
+/* Mobile View 426px */
+@media (max-width: 752px){
+    .container h1 { 
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
+    .choices {
+        gap: 0.5rem;
+        margin: 1rem 0;
+    }
+    .choice {
+        height: 150px;
+        width: 150px;
+    }
+    .msgContainer #msg {
+        width: 300px;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        height: 40px;
+        align-content: center;
+    }
+    .vs {display: none;}
+    .scoreBoard {
+        display: grid;
+        gap: 0;
+    }
+    #userLable, #compLable{
+        left: 0px;
+        text-align: center;
+    }
+    #userLable{
+        margin-bottom: 2rem;
+    }
+    .opponent {
+        padding: 0.3rem 0rem;
+    }
+    #compScore {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 500px){
+    .choice {
+        height: 100px;
+        width: 100px;
+    }
+    .msgContainer #msg {
+        width: 300px;
+    }
+}
+@media (max-width: 376px){
+    .choice {
+        height: 90px;
+        width: 90px;
+    }
+    .msgContainer #msg {
+        width: 230px;
+    }
+}
